@@ -8,6 +8,11 @@ read user_name
 echo -n "パスワードを入力してください：" >&2
 read password
 
-echo $service
-echo $user_name
-echo $password
+# write file
+storage_file="./storage/storage.txt"
+
+pw_info="${service}:${user_name}:${password}"
+echo $pw_info >>$storage_file
+
+#
+echo "Thank you!"
